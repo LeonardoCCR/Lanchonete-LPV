@@ -1,6 +1,6 @@
-# LP5_Projeto_Base
+# Lanchonete LPV
 
-Este projeto visa servir como base para as atividades feitas para a disciplina de Linguagem de Programação 5, que tem como intuito desenvolver padrões de projeto em java, incluindo testes e diagramas de classe como documentação.
+Neste projeto, pretendemos implementar um sistema de lanchonete utilizando o maior número de padrões de projeto possível.
 
 ## Diagrama de Classe
 

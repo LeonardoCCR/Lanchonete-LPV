@@ -1,21 +1,41 @@
 package org.example.lanchonete;
 
-/**
- * 
- */
+
 public class EstadoPronto extends EstadoPedido {
 
-	/**
-	 * Default constructor
-	 */
-	public EstadoPronto() {
+
+
+	@Override
+	public void cancelar(Pedido contexto) {
+		contexto.setEstado(new EstadoCancelado());
+		notificar(contexto, "Pedido cancelado, multa aplicada");
+		//TODO: implementar multa
 	}
 
-	/**
-	 * 
-	 */
-	protected void notificar() {
-		// TODO implement here
+	@Override
+	public void iniciarPreparo(Pedido contexto) {
+		acaoInvalida("Não é possível iniciar o preparo de um pedido com estado \""+ this +"\".");
+	}
+
+	@Override
+	public void finalizarPreparo(Pedido contexto) {
+		acaoInvalida("Não é possível finalizar o preparo de um pedido com estado \""+ this +"\".");
+	}
+
+	@Override
+	public void enviarEntrega(Pedido contexto) {
+		contexto.setEstado(new EstadoEmEntrega());
+		notificar(contexto, "Pedido em entrega");
+	}
+
+	@Override
+	public void confirmarEntrega(Pedido contexto) {
+		acaoInvalida("Não é possível confirmar a entrega de um pedido com estado \""+ this +"\".");
+	}
+
+	@Override
+	public String toString(){
+		return "Pronto para Entrega";
 	}
 
 }

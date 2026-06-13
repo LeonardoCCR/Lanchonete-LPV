@@ -1,37 +1,33 @@
 package org.example.lanchonete;
 
-/**
- * 
- */
+import java.time.LocalDate;
+
+
 public class ContadorPedido {
 
-	/**
-	 * Default constructor
-	 */
+	private int contagemPedidos;
+	private LocalDate dataAtual;
+
+
+	private static final ContadorPedido instance = new ContadorPedido();
+
 	public ContadorPedido() {
+		contagemPedidos = 0;
+		dataAtual = LocalDate.now();
 	}
 
-	/**
-	 * 
-	 */
-	private void contagemPedidos;
+	public String gerarCodigo() {
 
-	/**
-	 * 
-	 */
-	private void dataAtual;
+		if(!dataAtual.equals(LocalDate.now())){
+			dataAtual = LocalDate.now();
+			contagemPedidos = 0;
+		}
 
+		return dataAtual.toString() + "-" + (++contagemPedidos);
+	}
 
-	/**
-	 * 
-	 */
-	private ContadorPedido instance;
-
-	/**
-	 * 
-	 */
-	public void gerarCodigo() {
-		// TODO implement here
+	public static ContadorPedido get(){
+		return instance;
 	}
 
 }

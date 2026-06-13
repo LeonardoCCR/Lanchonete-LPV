@@ -8,20 +8,21 @@ public class ItemPedido {
 	/**
 	 * Default constructor
 	 */
-	public ItemPedido() {
+	public ItemPedido(){
+
 	}
 
 	/**
 	 * 
 	 */
-	private void quantidade;
+	private int quantidade;
 
 
 	/**
 	 * 
 	 */
-	public void getPreco() {
-		// TODO implement here
+	public double getPreco() {
+		return 0.0;
 	}
 
 	/**

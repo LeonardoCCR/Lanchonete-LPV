@@ -1,21 +1,11 @@
 package org.example.lanchonete;
 
-/**
- * 
- */
 public class PedidoObserver {
 
-	/**
-	 * Default constructor
-	 */
 	public PedidoObserver() {
 	}
 
-
-	/**
-	 * @param notificacao
-	 */
-	public void receberNotificacao(void notificacao) {
+	public void receberNotificacao(String notificacao) {
 		// TODO implement here
 	}
 

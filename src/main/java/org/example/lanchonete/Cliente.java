@@ -1,21 +1,11 @@
 package org.example.lanchonete;
 
-/**
- * 
- */
 public class Cliente {
 
-	/**
-	 * Default constructor
-	 */
 	public Cliente() {
 	}
 
-
-	/**
-	 * @param notificacao
-	 */
-	public void receberNotificacao(void notificacao) {
+	public void receberNotificacao(String notificacao) {
 		// TODO implement here
 	}
 

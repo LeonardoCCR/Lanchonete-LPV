@@ -65,7 +65,7 @@
 											"top": 495,
 											"width": 244.140625,
 											"height": 13,
-											"text": "org.example.lanchonete.Pedido"
+											"text": "Pedido"
 										},
 										{
 											"_type": "LabelView",
@@ -310,7 +310,7 @@
 											"top": 495,
 											"width": 132.14892578125,
 											"height": 13,
-											"text": "org.example.lanchonete.ItemPedido"
+											"text": "ItemPedido"
 										},
 										{
 											"_type": "LabelView",
@@ -590,7 +590,7 @@
 											"top": 215,
 											"width": 132.14892578125,
 											"height": 13,
-											"text": "org.example.lanchonete.SanduicheDecorator"
+											"text": "SanduicheDecorator"
 										},
 										{
 											"_type": "LabelView",
@@ -1419,7 +1419,7 @@
 											"top": 631,
 											"width": 87.67724609375,
 											"height": 13,
-											"text": "org.example.lanchonete.EstadoPedido"
+											"text": "EstadoPedido"
 										},
 										{
 											"_type": "LabelView",
@@ -1909,7 +1909,7 @@
 											"top": 855,
 											"width": 110.08447265625,
 											"height": 13,
-											"text": "org.example.lanchonete.EstadoCancelado"
+											"text": "EstadoCancelado"
 										},
 										{
 											"_type": "LabelView",
@@ -2115,7 +2115,7 @@
 											"top": 855,
 											"width": 86.2236328125,
 											"height": 13,
-											"text": "org.example.lanchonete.EstadoPronto"
+											"text": "EstadoPronto"
 										},
 										{
 											"_type": "LabelView",
@@ -2321,7 +2321,7 @@
 											"top": 791,
 											"width": 113.70263671875,
 											"height": 13,
-											"text": "org.example.lanchonete.EstadoEmPreparo"
+											"text": "EstadoEmPreparo"
 										},
 										{
 											"_type": "LabelView",
@@ -2527,7 +2527,7 @@
 											"top": 855,
 											"width": 102.8544921875,
 											"height": 13,
-											"text": "org.example.lanchonete.EstadoRecebido"
+											"text": "EstadoRecebido"
 										},
 										{
 											"_type": "LabelView",
@@ -2732,7 +2732,7 @@
 											"top": 791,
 											"width": 107.90087890625,
 											"height": 13,
-											"text": "org.example.lanchonete.EstadoFinalizado"
+											"text": "EstadoFinalizado"
 										},
 										{
 											"_type": "LabelView",
@@ -2934,7 +2934,7 @@
 											"top": 791,
 											"width": 112.97265625,
 											"height": 13,
-											"text": "org.example.lanchonete.EstadoEmEntrega"
+											"text": "EstadoEmEntrega"
 										},
 										{
 											"_type": "LabelView",
@@ -3790,7 +3790,7 @@
 											"top": 663,
 											"width": 109.39892578125,
 											"height": 13,
-											"text": "org.example.lanchonete.ContadorPedido"
+											"text": "ContadorPedido"
 										},
 										{
 											"_type": "LabelView",
@@ -4320,7 +4320,7 @@
 											"top": 343,
 											"width": 126.3916015625,
 											"height": 13,
-											"text": "org.example.lanchonete.Pagamento"
+											"text": "Pagamento"
 										},
 										{
 											"_type": "LabelView",
@@ -4878,7 +4878,7 @@
 											"top": 95,
 											"width": 124.21435546875,
 											"height": 13,
-											"text": "org.example.lanchonete.PagamentoPix"
+											"text": "PagamentoPix"
 										},
 										{
 											"_type": "LabelView",
@@ -5084,7 +5084,7 @@
 											"top": 95,
 											"width": 124.21435546875,
 											"height": 13,
-											"text": "org.example.lanchonete.PagamentoCartao"
+											"text": "PagamentoCartao"
 										},
 										{
 											"_type": "LabelView",
@@ -5291,7 +5291,7 @@
 											"top": 220,
 											"width": 124.21435546875,
 											"height": 13,
-											"text": "org.example.lanchonete.FormaPagamento"
+											"text": "FormaPagamento"
 										},
 										{
 											"_type": "LabelView",
@@ -6270,7 +6270,7 @@
 											"top": 636,
 											"width": 302.3232421875,
 											"height": 13,
-											"text": "+gerarCombo(): List<org.example.lanchonete.ItemPedido>",
+											"text": "+gerarCombo(): List<ItemPedido>",
 											"horizontalAlignment": 0
 										}
 									],
@@ -6700,7 +6700,7 @@
 											"top": 711,
 											"width": 302.68505859375,
 											"height": 13,
-											"text": "org.example.lanchonete.ComboFamiliaFactory"
+											"text": "ComboFamiliaFactory"
 										},
 										{
 											"_type": "LabelView",
@@ -7400,7 +7400,7 @@
 											"top": 711,
 											"width": 302.68505859375,
 											"height": 13,
-											"text": "org.example.lanchonete.ComboVeganoFactory"
+											"text": "ComboVeganoFactory"
 										},
 										{
 											"_type": "LabelView",
@@ -7476,7 +7476,7 @@
 											"top": 734,
 											"width": 302.68505859375,
 											"height": 13,
-											"text": "-lanche: org.example.lanchonete.SanduicheDecorator",
+											"text": "-lanche: SanduicheDecorator",
 											"horizontalAlignment": 0
 										},
 										{
@@ -8086,7 +8086,7 @@
 											"top": 527,
 											"width": 187.7861328125,
 											"height": 13,
-											"text": "org.example.lanchonete.Cliente"
+											"text": "Cliente"
 										},
 										{
 											"_type": "LabelView",
@@ -8579,7 +8579,7 @@
 											"top": 380,
 											"width": 187.7861328125,
 											"height": 13,
-											"text": "org.example.lanchonete.PedidoObserver"
+											"text": "PedidoObserver"
 										},
 										{
 											"_type": "LabelView",
@@ -9199,7 +9199,7 @@
 											"top": 39,
 											"width": 132.14892578125,
 											"height": 13,
-											"text": "org.example.lanchonete.PaoDecorator"
+											"text": "PaoDecorator"
 										},
 										{
 											"_type": "LabelView",
@@ -9596,7 +9596,7 @@
 											"top": 404,
 											"width": 66.736328125,
 											"height": 13,
-											"text": "org.example.lanchonete.Sanduiche"
+											"text": "Sanduiche"
 										},
 										{
 											"_type": "LabelView",
@@ -9782,7 +9782,7 @@
 											"top": 55,
 											"width": 149.078125,
 											"height": 13,
-											"text": "org.example.lanchonete.ComplementoDecorator"
+											"text": "ComplementoDecorator"
 										},
 										{
 											"_type": "LabelView",
@@ -11769,7 +11769,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "org.example.lanchonete.Pedido",
+					"name": "Pedido",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -11989,7 +11989,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "org.example.lanchonete.ItemPedido",
+					"name": "ItemPedido",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -12076,7 +12076,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "org.example.lanchonete.SanduicheDecorator",
+					"name": "SanduicheDecorator",
 					"ownedElements": [
 						{
 							"_type": "UMLRealization",
@@ -12187,7 +12187,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "org.example.lanchonete.EstadoPedido",
+					"name": "EstadoPedido",
 					"stereotype": "",
 					"operations": [
 						{
@@ -12208,7 +12208,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "org.example.lanchonete.EstadoCancelado",
+					"name": "EstadoCancelado",
 					"ownedElements": [
 						{
 							"_type": "UMLGeneralization",
@@ -12242,7 +12242,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "org.example.lanchonete.EstadoPronto",
+					"name": "EstadoPronto",
 					"ownedElements": [
 						{
 							"_type": "UMLGeneralization",
@@ -12276,7 +12276,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "org.example.lanchonete.EstadoEmPreparo",
+					"name": "EstadoEmPreparo",
 					"ownedElements": [
 						{
 							"_type": "UMLGeneralization",
@@ -12310,7 +12310,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "org.example.lanchonete.EstadoRecebido",
+					"name": "EstadoRecebido",
 					"ownedElements": [
 						{
 							"_type": "UMLGeneralization",
@@ -12344,7 +12344,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "org.example.lanchonete.EstadoFinalizado",
+					"name": "EstadoFinalizado",
 					"ownedElements": [
 						{
 							"_type": "UMLGeneralization",
@@ -12378,7 +12378,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "org.example.lanchonete.EstadoEmEntrega",
+					"name": "EstadoEmEntrega",
 					"ownedElements": [
 						{
 							"_type": "UMLGeneralization",
@@ -12412,7 +12412,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "org.example.lanchonete.ContadorPedido",
+					"name": "ContadorPedido",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -12484,7 +12484,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "org.example.lanchonete.Pagamento",
+					"name": "Pagamento",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -12556,7 +12556,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "org.example.lanchonete.PagamentoPix",
+					"name": "PagamentoPix",
 					"ownedElements": [
 						{
 							"_type": "UMLRealization",
@@ -12589,7 +12589,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "org.example.lanchonete.PagamentoCartao",
+					"name": "PagamentoCartao",
 					"ownedElements": [
 						{
 							"_type": "UMLRealization",
@@ -12622,7 +12622,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "org.example.lanchonete.FormaPagamento",
+					"name": "FormaPagamento",
 					"stereotype": "interface",
 					"operations": [
 						{
@@ -12746,7 +12746,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGes8WCmgA/EVc="
 									},
-									"type": "List<org.example.lanchonete.ItemPedido>",
+									"type": "List<ItemPedido>",
 									"direction": "return"
 								}
 							]
@@ -12886,7 +12886,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "org.example.lanchonete.ComboFamiliaFactory",
+					"name": "ComboFamiliaFactory",
 					"ownedElements": [
 						{
 							"_type": "UMLGeneralization",
@@ -13035,7 +13035,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "org.example.lanchonete.ComboVeganoFactory",
+					"name": "ComboVeganoFactory",
 					"ownedElements": [
 						{
 							"_type": "UMLGeneralization",
@@ -13163,7 +13163,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "org.example.lanchonete.Cliente",
+					"name": "Cliente",
 					"ownedElements": [
 						{
 							"_type": "UMLRealization",
@@ -13207,7 +13207,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "org.example.lanchonete.PedidoObserver",
+					"name": "PedidoObserver",
 					"stereotype": "interface",
 					"operations": [
 						{
@@ -13237,7 +13237,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "org.example.lanchonete.PaoDecorator",
+					"name": "PaoDecorator",
 					"ownedElements": [
 						{
 							"_type": "UMLGeneralization",
@@ -13316,7 +13316,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "org.example.lanchonete.Sanduiche",
+					"name": "Sanduiche",
 					"ownedElements": [
 						{
 							"_type": "UMLGeneralization",
@@ -13340,7 +13340,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "org.example.lanchonete.ComplementoDecorator",
+					"name": "ComplementoDecorator",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -13539,7 +13539,7 @@
 			"_parent": {
 				"$ref": "AAAAAAFF+h6SjaM2Hec="
 			},
-			"name": "org.example.lanchonete.EstadoPedido",
+			"name": "EstadoPedido",
 			"ownedElements": [
 				{
 					"_type": "UMLStatechartDiagram",
@@ -13693,7 +13693,7 @@
 											"top": 199,
 											"width": 112.25537109375,
 											"height": 13,
-											"text": "org.example.lanchonete.EstadoRecebido"
+											"text": "EstadoRecebido"
 										},
 										{
 											"_type": "LabelView",
@@ -13859,7 +13859,7 @@
 											"top": 671,
 											"width": 107.90087890625,
 											"height": 13,
-											"text": "org.example.lanchonete.EstadoFinalizado"
+											"text": "EstadoFinalizado"
 										},
 										{
 											"_type": "LabelView",
@@ -14025,7 +14025,7 @@
 											"top": 439,
 											"width": 86.2236328125,
 											"height": 13,
-											"text": "org.example.lanchonete.EstadoPronto"
+											"text": "EstadoPronto"
 										},
 										{
 											"_type": "LabelView",
@@ -14191,7 +14191,7 @@
 											"top": 671,
 											"width": 110.08447265625,
 											"height": 13,
-											"text": "org.example.lanchonete.EstadoCancelado"
+											"text": "EstadoCancelado"
 										},
 										{
 											"_type": "LabelView",
@@ -14523,7 +14523,7 @@
 											"top": 575,
 											"width": 112.97265625,
 											"height": 13,
-											"text": "org.example.lanchonete.EstadoEmEntrega"
+											"text": "EstadoEmEntrega"
 										},
 										{
 											"_type": "LabelView",
@@ -15656,7 +15656,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGes5km8pxxjJU="
 							},
-							"name": "org.example.lanchonete.EstadoRecebido"
+							"name": "EstadoRecebido"
 						},
 						{
 							"_type": "UMLState",
@@ -15664,7 +15664,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGes5km8pxxjJU="
 							},
-							"name": "org.example.lanchonete.EstadoFinalizado"
+							"name": "EstadoFinalizado"
 						},
 						{
 							"_type": "UMLState",
@@ -15672,7 +15672,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGes5km8pxxjJU="
 							},
-							"name": "org.example.lanchonete.EstadoPronto"
+							"name": "EstadoPronto"
 						},
 						{
 							"_type": "UMLState",
@@ -15680,7 +15680,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGes5km8pxxjJU="
 							},
-							"name": "org.example.lanchonete.EstadoCancelado"
+							"name": "EstadoCancelado"
 						},
 						{
 							"_type": "UMLState",
@@ -15696,7 +15696,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGes5km8pxxjJU="
 							},
-							"name": "org.example.lanchonete.EstadoEmEntrega"
+							"name": "EstadoEmEntrega"
 						}
 					],
 					"transitions": [

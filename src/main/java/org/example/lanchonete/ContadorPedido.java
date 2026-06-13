@@ -8,10 +8,9 @@ public class ContadorPedido {
 	private int contagemPedidos;
 	private LocalDate dataAtual;
 
-
 	private static final ContadorPedido instance = new ContadorPedido();
 
-	public ContadorPedido() {
+	private ContadorPedido() {
 		contagemPedidos = 0;
 		dataAtual = LocalDate.now();
 	}

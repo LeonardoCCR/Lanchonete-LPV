@@ -7,7 +7,7 @@ import java.util.List;
 public class Pedido {
 
 	private EstadoPedido estadoAtual;
-	private String codigo;
+	private final String codigo;
 	private List<ItemPedido> itens;
 
 

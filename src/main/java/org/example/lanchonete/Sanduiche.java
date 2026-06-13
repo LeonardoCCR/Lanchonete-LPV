@@ -1,19 +1,22 @@
 package org.example.lanchonete;
 
-/**
- * 
- */
-public class Sanduiche extends ItemPedido {
+public class Sanduiche implements ItemPersonalizavel {
 
-	/**
-	 * Default constructor
-	 */
-	public Sanduiche() {
+	private String descricao;
+	private double preco;
+
+	public Sanduiche(String descricao, double precoBase) {
+		this.descricao = descricao;
+		this.preco = precoBase;
 	}
 
-	/**
-	 * 
-	 */
-	private SanduicheDecorator sanduiche;
+	@Override
+	public String getDescricao() {
+		return descricao;
+	}
 
+	@Override
+	public double getPreco() {
+		return preco;
+	}
 }

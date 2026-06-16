@@ -177,7 +177,7 @@
 											"top": 812,
 											"width": 340.041015625,
 											"height": 13,
-											"text": "+linhas: List<itemPedido>",
+											"text": "-linhas: List<itemPedido>",
 											"horizontalAlignment": 0
 										}
 									],
@@ -7821,12 +7821,12 @@
 							},
 							"font": "Arial;13;0",
 							"parentStyle": false,
-							"left": 1752,
-							"top": 304,
-							"width": 81.419921875,
-							"height": 124,
+							"left": 1760,
+							"top": 248,
+							"width": 87.9072265625,
+							"height": 141,
 							"autoResize": true,
-							"text": "Potenciais features:\n- Cardápio\n- Estoque\n- Marketing\n- Descontos"
+							"text": "Potenciais features:\n- Cardápio\n- Estoque\n- Marketing\n- Descontos\n- Permissões\n"
 						},
 						{
 							"_type": "UMLClassView",
@@ -15558,6 +15558,37 @@
 							"propertyLabel": {
 								"$ref": "AAAAAAGeyB/BzRK4jvQ="
 							}
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAGezeGkJ/snOF0=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"parentStyle": false,
+							"left": 1176,
+							"top": 480,
+							"width": 60.46630859375,
+							"height": 25,
+							"text": "Builder"
+						},
+						{
+							"_type": "UMLNoteLinkView",
+							"_id": "AAAAAAGezeHKX/7OZ00=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"parentStyle": false,
+							"head": {
+								"$ref": "AAAAAAGex6rlxByOpik="
+							},
+							"tail": {
+								"$ref": "AAAAAAGezeGkJ/snOF0="
+							},
+							"lineStyle": 1,
+							"points": "1217:506;1245:543"
 						}
 					]
 				},
@@ -15795,6 +15826,7 @@
 								"$ref": "AAAAAAGes4krDo1nRxU="
 							},
 							"name": "linhas",
+							"visibility": "private",
 							"type": "List<itemPedido>"
 						}
 					],

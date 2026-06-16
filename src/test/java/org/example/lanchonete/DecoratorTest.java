@@ -1,6 +1,5 @@
-package org.example;
+package org.example.lanchonete;
 
-import org.example.lanchonete.*;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -40,7 +39,7 @@ public class DecoratorTest {
 
         sanduiche = new BaconExtra(sanduiche);
 
-        assertEquals("X-Burger + Bacon", sanduiche.getDescricao());
+        assertEquals("X-Burger + Bacon Extra", sanduiche.getDescricao());
 
         assertEquals(19.0, sanduiche.getPreco());
     }
@@ -54,7 +53,7 @@ public class DecoratorTest {
 
         sanduiche = new BaconExtra(sanduiche);
 
-        assertEquals("X-Burger + Queijo Extra + Bacon", sanduiche.getDescricao());
+        assertEquals("X-Burger + Queijo Extra + Bacon Extra", sanduiche.getDescricao());
 
         assertEquals(22.0, sanduiche.getPreco());
     }

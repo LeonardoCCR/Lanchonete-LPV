@@ -30,10 +30,10 @@ public class Pedido implements Iterable<ItemPedido> {
 
 	public Cliente getCliente() {
 		return cliente;
-	}
+    }
 
 
-	public void setEstado(EstadoPedido estado){
+    public void setEstado(EstadoPedido estado){
 		estadoAtual = estado;
 	}
 	public void adicionarLinha(ItemPedido itemPedido) {
@@ -45,9 +45,10 @@ public class Pedido implements Iterable<ItemPedido> {
 
 
 	public void notificar(String notificacao) {
-		// TODO implement here
+        // TODO implement here
     }
-	public double getValorBruto() {
+
+    public double getValorBruto() {
 		double total = 0;
 		for (ItemPedido linha : linhas) {
 			total += linha.getSubtotal();
@@ -77,7 +78,7 @@ public class Pedido implements Iterable<ItemPedido> {
 
 
 	public void addObserver(PedidoObserver observer) {
-		// TODO implement here
+        // TODO implement here
     }
 	//Strategy
 	public double getValorTotalFinal(EstrategiaDesconto estrategia) {

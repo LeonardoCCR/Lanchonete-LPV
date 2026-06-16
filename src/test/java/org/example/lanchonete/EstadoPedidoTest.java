@@ -18,6 +18,10 @@ class EstadoPedidoTest {
         public EstadoPedido ultimoEstadoAtribuido = null;
         public List<String> notificacoesRecebidas = new ArrayList<>();
 
+        public PedidoSpy(){
+            super(new Cliente("1", "1", new Cidade("a", "a")));
+        }
+
         @Override
         public void setEstado(EstadoPedido estado) {
             this.ultimoEstadoAtribuido = estado;

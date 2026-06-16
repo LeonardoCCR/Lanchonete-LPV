@@ -1,9 +1,5 @@
-package org.example;
+package org.example.lanchonete;
 
-import org.example.lanchonete.Cidade;
-import org.example.lanchonete.CidadeFactory;
-import org.example.lanchonete.Cliente;
-import org.example.lanchonete.PessoaRepository;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

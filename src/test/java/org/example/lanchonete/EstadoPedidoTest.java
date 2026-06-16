@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -19,7 +20,12 @@ class EstadoPedidoTest {
         public List<String> notificacoesRecebidas = new ArrayList<>();
 
         public PedidoSpy(){
-            super(new Cliente("1", "1", new Cidade("a", "a")));
+            super(new Cliente(
+                    "1",
+                    "1",
+                    new Cidade("a", "a"),
+                    new PreferenciasNotificacao(Arrays.asList("PEDIDO_RECEBIDO", "PEDIDO_SAIU_ENTREGA", "PEDIDO_CANCELADO", "PEDIDO_ENTREGUE", "PEDIDO_FINALIZADO"))
+            ));
         }
 
         @Override
@@ -28,10 +34,12 @@ class EstadoPedidoTest {
             super.setEstado(estado);
         }
 
-        @Override
-        public void notificar(String notificacao) {
-            this.notificacoesRecebidas.add(notificacao);
+
+        public void notificar(Notificacao notificacao) {
+
+            this.notificacoesRecebidas.add(notificacao.mensagem());
             super.notificar(notificacao);
+
         }
     }
 

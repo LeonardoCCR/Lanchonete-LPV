@@ -13,7 +13,7 @@ public class Pedido implements Iterable<ItemPedido> {
 	private final Cliente cliente;
 	private final List<ItemPedido> linhas;
 	private EstadoPedido estadoAtual;
-	private final PedidoObservadorHandler notificacoes;
+	private final PedidoObservadorHandler notificacaoHandler;
 
 
 	public Pedido(Cliente cliente) {
@@ -24,8 +24,8 @@ public class Pedido implements Iterable<ItemPedido> {
         this.estadoAtual = new EstadoRecebido();
         this.codigo = ContadorPedido.get().gerarCodigo();
 		this.linhas = new ArrayList<>();
-		this.notificacoes = new PedidoObservadorHandler();
-		notificacoes.aplicarPreferencias(cliente);
+		this.notificacaoHandler = new PedidoObservadorHandler();
+		notificacaoHandler.aplicarPreferencias(cliente);
 
 	}
 
@@ -39,7 +39,7 @@ public class Pedido implements Iterable<ItemPedido> {
 
 
 	public void notificar(Notificacao notificacao) {
-        notificacoes.emitirNotificacao(notificacao);
+        notificacaoHandler.emitirNotificacao(notificacao);
     }
 
     public double getValorBruto() {
@@ -72,7 +72,7 @@ public class Pedido implements Iterable<ItemPedido> {
 
 	//Observer
 	public void addObserver(String canal, PedidoObservador observer) {
-        notificacoes.adicionarObservador(canal, observer);
+        notificacaoHandler.adicionarObservador(canal, observer);
     }
 
 	//Strategy

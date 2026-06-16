@@ -4,7 +4,7 @@ import java.util.*;
 
 public class PreferenciasNotificacao implements IPrototype<PreferenciasNotificacao>{
 
-    private List<String> canaisInscritos = new ArrayList<>();
+    private List<String> canaisInscritos;
 
 
     public PreferenciasNotificacao(List<String> canaisInscritos){

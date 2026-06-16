@@ -5,4 +5,6 @@ public interface PedidoObservador {
 
 	void receberNotificacao(Notificacao notificacao);
 
+	PreferenciasNotificacao getPreferencias();
+
 }

@@ -42,11 +42,11 @@ public class PedidoObservadorHandler {
         canais.get(canal).add(observador);
     }
 
-    public void aplicarPreferencias(Cliente cliente){
-        PreferenciasNotificacao preferencias = cliente.getPreferencias();
+    public void aplicarPreferencias(PedidoObservador observador){
+        PreferenciasNotificacao preferencias = observador.getPreferencias();
 
         for(String canal: preferencias.getCanaisInscritos()){
-            adicionarObservador(canal, cliente);
+            adicionarObservador(canal, observador);
         }
 
     }

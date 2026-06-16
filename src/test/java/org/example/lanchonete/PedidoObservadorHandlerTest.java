@@ -21,6 +21,20 @@ class PedidoObservadorHandlerTest {
         public void receberNotificacao(Notificacao notificacao) {
             notificacoesRecebidas.add(notificacao);
         }
+
+        @Override
+        public PreferenciasNotificacao getPreferencias() {
+            List<String> lista = new ArrayList<>();
+
+            lista.add("PEDIDO_RECEBIDO");
+            lista.add("PEDIDO_EM_PREPARO");
+            lista.add("PEDIDO_PREPARADO");
+            lista.add("PEDIDO_SAIU_ENTREGA");
+            lista.add("PEDIDO_FINALIZADO");
+            lista.add("PEDIDO_CANCELADO");
+            
+            return new PreferenciasNotificacao(lista);
+        }
     }
 
     @BeforeEach

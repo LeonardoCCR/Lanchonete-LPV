@@ -6,7 +6,7 @@ public class EstadoEmPreparo extends EstadoPedido {
 	@Override
 	public void cancelar(Pedido contexto) {
 		contexto.setEstado(new EstadoCancelado());
-		notificar(contexto, "Pedido cancelado");
+		notificar(contexto, "Pedido cancelado", "PEDIDO_CANCELADO");
 	}
 
 	@Override
@@ -17,7 +17,7 @@ public class EstadoEmPreparo extends EstadoPedido {
 	@Override
 	public void finalizarPreparo(Pedido contexto) {
 		contexto.setEstado(new EstadoPronto());
-//		notificar(contexto, "Pedido preparado");
+		notificar(contexto, "Pedido preparado", "PEDIDO_FINALIZADO");
 	}
 
 	@Override

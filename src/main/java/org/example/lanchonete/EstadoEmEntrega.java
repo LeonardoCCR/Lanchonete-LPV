@@ -26,7 +26,7 @@ public class EstadoEmEntrega extends EstadoPedido {
 	@Override
 	public void confirmarEntrega(Pedido contexto) {
 		contexto.setEstado(new EstadoFinalizado());
-		notificar(contexto, "Pedido entregue");
+		notificar(contexto, "Pedido entregue", "PEDIDO_ENTREGUE");
 	}
 
 	@Override

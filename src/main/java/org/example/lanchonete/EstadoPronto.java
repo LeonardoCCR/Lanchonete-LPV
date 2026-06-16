@@ -8,7 +8,7 @@ public class EstadoPronto extends EstadoPedido {
 	@Override
 	public void cancelar(Pedido contexto) {
 		contexto.setEstado(new EstadoCancelado());
-		notificar(contexto, "Pedido cancelado, multa aplicada");
+		notificar(contexto, "Pedido cancelado, multa aplicada", "PEDIDO_CANCELADO");
 		//TODO: implementar multa
 	}
 
@@ -25,7 +25,7 @@ public class EstadoPronto extends EstadoPedido {
 	@Override
 	public void enviarEntrega(Pedido contexto) {
 		contexto.setEstado(new EstadoEmEntrega());
-		notificar(contexto, "Pedido em entrega");
+		notificar(contexto, "Pedido em entrega", "PEDIDO_SAIU_ENTREGA");
 	}
 
 	@Override

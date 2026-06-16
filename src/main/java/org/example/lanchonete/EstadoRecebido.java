@@ -8,13 +8,13 @@ public class EstadoRecebido extends EstadoPedido {
 	@Override
 	public void cancelar(Pedido contexto) {
 		contexto.setEstado(new EstadoCancelado());
-		notificar(contexto, "Pedido cancelado");
+		notificar(contexto, "Pedido cancelado", "PEDIDO_CANCELADO");
 	}
 
 	@Override
 	public void iniciarPreparo(Pedido contexto) {
 		contexto.setEstado(new EstadoEmPreparo());
-		notificar(contexto, "Pedido em preparo");
+		notificar(contexto, "Pedido em preparo", "PEDIDO_RECEBIDO");
 	}
 
 	@Override

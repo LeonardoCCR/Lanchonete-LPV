@@ -4,8 +4,9 @@ package org.example.lanchonete;
 public abstract class EstadoPedido {
 
 
-	protected void notificar(Pedido contexto, String notificacao) {
-		contexto.notificar("Notificação sobre o pedido "+contexto.toString()+": "+notificacao);
+	protected void notificar(Pedido contexto, String mensagem, String canal) {
+		Notificacao notificacao = new Notificacao("Notificação sobre o pedido "+contexto.toString()+": "+mensagem, canal);
+		contexto.notificar(notificacao);
 	}
 
 	public abstract void cancelar(Pedido contexto);

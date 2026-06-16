@@ -9,8 +9,11 @@ import java.util.List;
 public class Pedido implements Iterable<ItemPedido> {
 
 
+	private final String codigo;
 	private final Cliente cliente;
-	private final List<ItemPedido> linhas = new ArrayList<>();
+	private final List<ItemPedido> linhas;
+	private EstadoPedido estadoAtual;
+	private final PedidoObservadorHandler notificacoes;
 
 
 	public Pedido(Cliente cliente) {
@@ -20,22 +23,13 @@ public class Pedido implements Iterable<ItemPedido> {
 		this.cliente = cliente;
         this.estadoAtual = new EstadoRecebido();
         this.codigo = ContadorPedido.get().gerarCodigo();
+		this.linhas = new ArrayList<>();
+		this.notificacoes = new PedidoObservadorHandler();
+		notificacoes.aplicarPreferencias(cliente);
 
 	}
 
-	private EstadoPedido estadoAtual;
-	private final String codigo;
 
-
-
-	public Cliente getCliente() {
-		return cliente;
-    }
-
-
-    public void setEstado(EstadoPedido estado){
-		estadoAtual = estado;
-	}
 	public void adicionarLinha(ItemPedido itemPedido) {
 		if (itemPedido == null) {
 			throw new IllegalArgumentException("O item do pedido não pode ser nulo.");
@@ -44,8 +38,8 @@ public class Pedido implements Iterable<ItemPedido> {
 	}
 
 
-	public void notificar(String notificacao) {
-        // TODO implement here
+	public void notificar(Notificacao notificacao) {
+        notificacoes.emitirNotificacao(notificacao);
     }
 
     public double getValorBruto() {
@@ -76,10 +70,11 @@ public class Pedido implements Iterable<ItemPedido> {
 		estadoAtual.confirmarEntrega(this);
 	}
 
-
-	public void addObserver(PedidoObserver observer) {
-        // TODO implement here
+	//Observer
+	public void addObserver(String canal, PedidoObservador observer) {
+        notificacoes.adicionarObservador(canal, observer);
     }
+
 	//Strategy
 	public double getValorTotalFinal(EstrategiaDesconto estrategia) {
 		if (estrategia == null) {
@@ -87,6 +82,14 @@ public class Pedido implements Iterable<ItemPedido> {
 		}
 		double bruto = getValorBruto();
 		return estrategia.aplicar(bruto);
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setEstado(EstadoPedido estado){
+		estadoAtual = estado;
 	}
 
 	@Override

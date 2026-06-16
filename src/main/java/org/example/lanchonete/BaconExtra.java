@@ -8,7 +8,7 @@ public class BaconExtra extends AdicionalDecorator {
 
     @Override
     public String getDescricao() {
-        return item.getDescricao() + " + Bacon";
+        return item.getDescricao() + " + Bacon Extra";
     }
 
     @Override

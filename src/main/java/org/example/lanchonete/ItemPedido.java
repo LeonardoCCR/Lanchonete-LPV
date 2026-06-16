@@ -1,49 +1,33 @@
 package org.example.lanchonete;
 
-/**
- * 
- */
 public class ItemPedido {
 
-	/**
-	 * Default constructor
-	 */
-	public ItemPedido(){
+	private final ItemConsumivel item;
+	private final int quantidade;
 
+	ItemPedido(ItemConsumivel item, int quantidade) {
+		if (quantidade <= 0) {
+			throw new IllegalArgumentException("A quantidade deve ser maior que zero.");
+		}
+		this.item = item;
+		this.quantidade = quantidade;
 	}
 
-	/**
-	 * 
-	 */
-	private int quantidade;
-
-
-	/**
-	 * 
-	 */
-	public double getPreco() {
-		return 0.0;
+	public double getSubtotal() {
+		return item.getPreco() * quantidade;
 	}
 
-	/**
-	 * 
-	 */
-	public void getDescricao() {
-		// TODO implement here
+	public ItemConsumivel getItem() {
+		return item;
 	}
 
-	/**
-	 * 
-	 */
-	public void verificarVegetariano() {
-		// TODO implement here
+	public int getQuantidade() {
+		return quantidade;
 	}
 
-	/**
-	 * 
-	 */
-	public void verificarVegano() {
-		// TODO implement here
+	@Override
+	public String toString() {
+		return String.format("%s (x%d) - Subtotal: R$ %.2f",
+				item.getDescricao(), quantidade, getSubtotal());
 	}
-
 }

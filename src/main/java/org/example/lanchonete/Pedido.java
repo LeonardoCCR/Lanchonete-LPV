@@ -43,7 +43,6 @@ public class Pedido implements Iterable<ItemPedido> {
 		this.linhas.add(itemPedido);
 	}
 
-
 	public void notificar(String notificacao) {
         // TODO implement here
     }
@@ -92,6 +91,16 @@ public class Pedido implements Iterable<ItemPedido> {
 	@Override
 	public String toString(){
 		return codigo;
+	}
+
+	public boolean pagar(ProcessadorPagamento mecanismoPagamento, EstrategiaDesconto estrategia) {
+		if (mecanismoPagamento == null) {
+			throw new IllegalArgumentException("Mecanismo de pagamento inválido.");
+		}
+
+		double valorFinal = this.getValorTotalFinal(estrategia);
+
+		return mecanismoPagamento.processar(valorFinal);
 	}
 
 	//Iterator

@@ -1,4 +1,6 @@
-package org.example.lanchonete;
+package org.example.lanchonete.pedido;
+
+import org.example.lanchonete.Command;
 
 public class CancelarPedidoCommand implements Command {
 

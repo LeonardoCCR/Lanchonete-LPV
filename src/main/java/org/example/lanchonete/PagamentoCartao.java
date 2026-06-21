@@ -1,5 +1,7 @@
 package org.example.lanchonete;
 
+import org.example.lanchonete.pedido.Pedido;
+
 public class PagamentoCartao extends Pagamento {
 
 	public PagamentoCartao(ProcessadorPagamento processador) {

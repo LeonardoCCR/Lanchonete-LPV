@@ -1,16 +1,22 @@
-package org.example.lanchonete;
+package org.example.lanchonete.pedido;
 
+
+import org.example.lanchonete.*;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 
 
 public class Pedido implements Iterable<ItemPedido> {
 
 
+	private final String codigo;
 	private final Cliente cliente;
-	private final List<ItemPedido> linhas = new ArrayList<>();
+	private final List<ItemPedido> linhas;
+	private EstadoPedido estadoAtual;
+	private final PedidoObservadorHandler notificacaoHandler;
 
 
 	public Pedido(Cliente cliente) {
@@ -20,22 +26,13 @@ public class Pedido implements Iterable<ItemPedido> {
 		this.cliente = cliente;
         this.estadoAtual = new EstadoRecebido();
         this.codigo = ContadorPedido.get().gerarCodigo();
+		this.linhas = new ArrayList<>();
+		this.notificacaoHandler = new PedidoObservadorHandler();
+		notificacaoHandler.aplicarPreferencias(cliente);
 
 	}
 
-	private EstadoPedido estadoAtual;
-	private final String codigo;
 
-
-
-	public Cliente getCliente() {
-		return cliente;
-    }
-
-
-    public void setEstado(EstadoPedido estado){
-		estadoAtual = estado;
-	}
 	public void adicionarLinha(ItemPedido itemPedido) {
 		if (itemPedido == null) {
 			throw new IllegalArgumentException("O item do pedido não pode ser nulo.");
@@ -43,8 +40,9 @@ public class Pedido implements Iterable<ItemPedido> {
 		this.linhas.add(itemPedido);
 	}
 
-	public void notificar(String notificacao) {
-        // TODO implement here
+
+	public void notificar(Notificacao notificacao) {
+        notificacaoHandler.emitirNotificacao(notificacao);
     }
 
     public double getValorBruto() {
@@ -55,30 +53,31 @@ public class Pedido implements Iterable<ItemPedido> {
 		return total;
 	}
 
-	public void cancelar(){
+	void cancelar(){
 		estadoAtual.cancelar(this);
 	}
 
-	public void iniciarPreparo(){
+	void iniciarPreparo(){
 		estadoAtual.iniciarPreparo(this);
 	}
 
-	public void finalizarPreparo(){
+	void finalizarPreparo(){
 		estadoAtual.finalizarPreparo(this);
 	}
 
-	public void enviarEntrega(){
+	void enviarEntrega(){
 		estadoAtual.enviarEntrega(this);
 	}
 
-	public void confirmarEntrega(){
+	void confirmarEntrega(){
 		estadoAtual.confirmarEntrega(this);
 	}
 
-
-	public void addObserver(PedidoObserver observer) {
-        // TODO implement here
+	//Observer
+	public void addObserver(String canal, PedidoObservador observer) {
+        notificacaoHandler.adicionarObservador(canal, observer);
     }
+
 	//Strategy
 	public double getValorTotalFinal(EstrategiaDesconto estrategia) {
 		if (estrategia == null) {
@@ -86,6 +85,14 @@ public class Pedido implements Iterable<ItemPedido> {
 		}
 		double bruto = getValorBruto();
 		return estrategia.aplicar(bruto);
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	void setEstado(EstadoPedido estado){
+		estadoAtual = estado;
 	}
 
 	@Override
@@ -110,6 +117,6 @@ public class Pedido implements Iterable<ItemPedido> {
 	}
 
 	public Object getEstadoAtual() {
-		return this.estadoAtual;
+		return this.estadoAtual.clonar();
 	}
 }

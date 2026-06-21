@@ -1,5 +1,6 @@
 package org.example.lanchonete;
 
+import org.example.lanchonete.pedido.Pedido;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

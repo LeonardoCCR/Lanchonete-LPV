@@ -56,6 +56,7 @@ public class PedidoObservadorHandler {
         adicionarCanal("PEDIDO_EM_PREPARO");
         adicionarCanal("PEDIDO_PREPARADO");
         adicionarCanal("PEDIDO_SAIU_ENTREGA");
+        adicionarCanal("PEDIDO_ENTREGUE");
         adicionarCanal("PEDIDO_FINALIZADO");
         adicionarCanal("PEDIDO_CANCELADO");
     }

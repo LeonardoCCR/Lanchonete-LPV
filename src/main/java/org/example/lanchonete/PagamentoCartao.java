@@ -1,21 +1,15 @@
 package org.example.lanchonete;
 
-/**
- * 
- */
-public class PagamentoCartao {
+public class PagamentoCartao extends Pagamento {
 
-	/**
-	 * Default constructor
-	 */
-	public PagamentoCartao() {
+	public PagamentoCartao(ProcessadorPagamento processador) {
+		super(processador);
 	}
 
-	/**
-	 * 
-	 */
-	public void efetuarPagamento() {
-		// TODO implement here
+	@Override
+	public void efetuarPagamento(Pedido pedido, EstrategiaDesconto estrategia) {
+		this.valor = pedido.getValorTotalFinal(estrategia);
+		// Paga usando a ponte
+		this.confirmado = this.processador.processar(this.valor);
 	}
-
 }

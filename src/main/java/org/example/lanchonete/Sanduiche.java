@@ -9,7 +9,7 @@ public class Sanduiche implements ItemPersonalizavel {
 		this.descricao = descricao;
 		this.preco = precoBase;
 	}
-
+	
 	@Override
 	public String getDescricao() {
 		return descricao;
@@ -19,4 +19,7 @@ public class Sanduiche implements ItemPersonalizavel {
 	public double getPreco() {
 		return preco;
 	}
+
+    public static class LachoneteMediator {
+    }
 }

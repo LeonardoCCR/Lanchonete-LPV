@@ -1,21 +1,18 @@
 package org.example.lanchonete;
 
-/**
- * 
- */
-public class PagamentoPix {
 
-	/**
-	 * Default constructor
-	 */
-	public PagamentoPix() {
+public class PagamentoPix extends Pagamento {
+
+	public PagamentoPix(ProcessadorPagamento processador) {
+		super(processador);
 	}
 
-	/**
-	 * 
-	 */
-	public void efetuarPagamento() {
-		// TODO implement here
-	}
+	@Override
+	public void efetuarPagamento(Pedido pedido, EstrategiaDesconto estrategia) {
+		this.valor = pedido.getValorTotalFinal(estrategia);
+		System.out.println("[Pix] Gerando chave aleatória e QR Code para transferência...");
 
+		// Executa através da ponte
+		this.confirmado = this.processador.processar(this.valor);
+	}
 }

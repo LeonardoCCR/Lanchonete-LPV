@@ -1,33 +1,20 @@
 package org.example.lanchonete;
 
-/**
- * 
- */
-public class Pagamento {
+public abstract class Pagamento {
 
-	/**
-	 * Default constructor
-	 */
-	public Pagamento() {
+	protected ProcessadorPagamento processador; //ponte
+	protected double valor;
+	protected boolean confirmado;
+
+	// Construtor com a ponte
+	protected Pagamento(ProcessadorPagamento processador) {
+		this.processador = processador;
+		this.confirmado = false;
 	}
 
-	/**
-	 * 
-	 */
-	private double valor;
-
-	/**
-	 * 
-	 */
-	private boolean confirmado;
-
-
-
-	/**
-	 * 
-	 */
-	public void efetuarPagamento() {
-		// TODO implement here
+	public boolean isConfirmado() {
+		return confirmado;
 	}
 
+	public abstract void efetuarPagamento(Pedido pedido, EstrategiaDesconto estrategia);
 }

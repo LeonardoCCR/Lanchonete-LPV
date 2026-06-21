@@ -97,6 +97,16 @@ public class Pedido implements Iterable<ItemPedido> {
 		return codigo;
 	}
 
+	public boolean pagar(ProcessadorPagamento mecanismoPagamento, EstrategiaDesconto estrategia) {
+		if (mecanismoPagamento == null) {
+			throw new IllegalArgumentException("Mecanismo de pagamento inválido.");
+		}
+
+		double valorFinal = this.getValorTotalFinal(estrategia);
+
+		return mecanismoPagamento.processar(valorFinal);
+	}
+
 	//Iterator
 	@Override
 	public Iterator<ItemPedido> iterator() {

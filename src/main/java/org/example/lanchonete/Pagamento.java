@@ -1,5 +1,7 @@
 package org.example.lanchonete;
 
+import org.example.lanchonete.pedido.Pedido;
+
 public abstract class Pagamento {
 
 	protected ProcessadorPagamento processador; //ponte

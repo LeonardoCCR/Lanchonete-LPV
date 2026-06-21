@@ -1,5 +1,9 @@
-package org.example.lanchonete;
+package org.example.lanchonete.pedido;
 
+import org.example.lanchonete.Cidade;
+import org.example.lanchonete.Cliente;
+import org.example.lanchonete.Notificacao;
+import org.example.lanchonete.PreferenciasNotificacao;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;

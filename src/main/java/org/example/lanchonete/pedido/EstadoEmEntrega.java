@@ -1,5 +1,7 @@
-package org.example.lanchonete;
+package org.example.lanchonete.pedido;
 
+
+import org.example.lanchonete.Command;
 
 public class EstadoEmEntrega extends EstadoPedido {
 
@@ -34,4 +36,21 @@ public class EstadoEmEntrega extends EstadoPedido {
 		return "Saiu para Entrega";
 	}
 
+	public static class EnviarEntregaCommand implements Command {
+
+		private final Pedido pedido;
+
+		public EnviarEntregaCommand(Pedido pedido) {
+			this.pedido = pedido;
+		}
+
+		@Override
+		public void executar() {
+			pedido.enviarEntrega();
+		}
+	}
+
+	public EstadoPedido clonar(){
+		return new EstadoEmEntrega();
+	}
 }

@@ -1,20 +1,16 @@
-package org.example.lanchonete;
+package org.example.lanchonete.pedido;
 
 
-public class EstadoRecebido extends EstadoPedido {
-
-
+public class EstadoFinalizado extends EstadoPedido {
 
 	@Override
 	public void cancelar(Pedido contexto) {
-		contexto.setEstado(new EstadoCancelado());
-		notificar(contexto, "Pedido cancelado", "PEDIDO_CANCELADO");
+		acaoInvalida("Não é possível cancelar de um pedido com estado \""+ this +"\".");
 	}
 
 	@Override
 	public void iniciarPreparo(Pedido contexto) {
-		contexto.setEstado(new EstadoEmPreparo());
-		notificar(contexto, "Pedido em preparo", "PEDIDO_RECEBIDO");
+		acaoInvalida("Não é possível iniciar o preparo de um pedido com estado \""+ this +"\".");
 	}
 
 	@Override
@@ -34,7 +30,11 @@ public class EstadoRecebido extends EstadoPedido {
 
 	@Override
 	public String toString(){
-		return "Recebido";
+		return "Finalizado";
+	}
+
+	public EstadoPedido clonar(){
+		return new EstadoFinalizado();
 	}
 
 }

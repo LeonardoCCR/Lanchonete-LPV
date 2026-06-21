@@ -1,9 +1,12 @@
-package org.example.lanchonete;
+package org.example.lanchonete.pedido;
 
+
+import org.example.lanchonete.*;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 
 
 public class Pedido implements Iterable<ItemPedido> {
@@ -50,23 +53,23 @@ public class Pedido implements Iterable<ItemPedido> {
 		return total;
 	}
 
-	public void cancelar(){
+	void cancelar(){
 		estadoAtual.cancelar(this);
 	}
 
-	public void iniciarPreparo(){
+	void iniciarPreparo(){
 		estadoAtual.iniciarPreparo(this);
 	}
 
-	public void finalizarPreparo(){
+	void finalizarPreparo(){
 		estadoAtual.finalizarPreparo(this);
 	}
 
-	public void enviarEntrega(){
+	void enviarEntrega(){
 		estadoAtual.enviarEntrega(this);
 	}
 
-	public void confirmarEntrega(){
+	void confirmarEntrega(){
 		estadoAtual.confirmarEntrega(this);
 	}
 
@@ -88,7 +91,7 @@ public class Pedido implements Iterable<ItemPedido> {
 		return cliente;
 	}
 
-	public void setEstado(EstadoPedido estado){
+	void setEstado(EstadoPedido estado){
 		estadoAtual = estado;
 	}
 
@@ -114,6 +117,6 @@ public class Pedido implements Iterable<ItemPedido> {
 	}
 
 	public Object getEstadoAtual() {
-		return this.estadoAtual;
+		return this.estadoAtual.clonar();
 	}
 }

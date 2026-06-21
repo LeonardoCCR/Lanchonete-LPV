@@ -1,5 +1,7 @@
-package org.example.lanchonete;
+package org.example.lanchonete.pedido;
 
+
+import org.example.lanchonete.Notificacao;
 
 public abstract class EstadoPedido {
 
@@ -25,4 +27,6 @@ public abstract class EstadoPedido {
 	protected void acaoInvalida(String message){
 		throw new IllegalStateException("A ação é inválida: "+message);
 	}
+
+	public abstract EstadoPedido clonar();
 }

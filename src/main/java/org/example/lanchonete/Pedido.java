@@ -108,4 +108,8 @@ public class Pedido implements Iterable<ItemPedido> {
 	public Iterator<ItemPedido> iterator() {
 		return linhas.iterator();
 	}
+
+	public Object getEstadoAtual() {
+		return this.estadoAtual;
+	}
 }

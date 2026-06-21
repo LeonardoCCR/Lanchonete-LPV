@@ -1,6 +1,6 @@
 package org.example.lanchonete;
 
-public class GatewayPagamentoExterno {
+public class GatewayPagamentoExterno{
 
     public String executarCobrancaEletronica(double quantiaDinheiro, String tokenSeguranca) {
 

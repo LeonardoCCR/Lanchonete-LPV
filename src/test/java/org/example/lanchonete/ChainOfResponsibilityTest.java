@@ -1,4 +1,5 @@
 package org.example.lanchonete;
+import org.example.lanchonete.entrega.TipoEntrega;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.example.lanchonete.pedido.*;
@@ -23,7 +24,7 @@ public class ChainOfResponsibilityTest {
         this.cadeia = eloAtendente;
 
         Cliente cliente = new Cliente("10", "Adailton", cidade);
-        this.pedido = new Pedido(cliente);
+        this.pedido = new Pedido(cliente, TipoEntrega.COMER_NO_LOCAL);
     }
 
     @Test

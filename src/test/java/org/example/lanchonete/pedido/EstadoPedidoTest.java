@@ -4,6 +4,7 @@ import org.example.lanchonete.Cidade;
 import org.example.lanchonete.Cliente;
 import org.example.lanchonete.Notificacao;
 import org.example.lanchonete.PreferenciasNotificacao;
+import org.example.lanchonete.entrega.TipoEntrega;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
@@ -29,7 +30,7 @@ class EstadoPedidoTest {
                     "1",
                     new Cidade("a", "a"),
                     new PreferenciasNotificacao(Arrays.asList("PEDIDO_RECEBIDO", "PEDIDO_SAIU_ENTREGA", "PEDIDO_CANCELADO", "PEDIDO_ENTREGUE", "PEDIDO_FINALIZADO"))
-            ));
+            ), TipoEntrega.COMER_NO_LOCAL);
         }
 
         @Override

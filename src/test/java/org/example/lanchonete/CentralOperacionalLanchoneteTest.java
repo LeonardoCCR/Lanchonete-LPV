@@ -2,6 +2,7 @@
 
 package org.example.lanchonete;
 
+import org.example.lanchonete.entrega.TipoEntrega;
 import org.example.lanchonete.pedido.CentralOperacionalLanchonete;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -23,8 +24,8 @@ public class CentralOperacionalLanchoneteTest {  //teste mediator
         cozinheiro = new Funcionario("1", "Hugo", cidade, "Cozinheiro");
 
         Cliente cliente = new Cliente("100", "Adailton", cidade);
-        pedido1 = new Pedido(cliente);
-        pedido2 = new Pedido(cliente);
+        pedido1 = new Pedido(cliente, TipoEntrega.COMER_NO_LOCAL);
+        pedido2 = new Pedido(cliente, TipoEntrega.COMER_NO_LOCAL);
     }
 
     @Test

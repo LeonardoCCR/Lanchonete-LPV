@@ -1,5 +1,6 @@
 package org.example.lanchonete;
 
+import org.example.lanchonete.entrega.TipoEntrega;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.example.lanchonete.pedido.Pedido;
@@ -15,7 +16,7 @@ public class LanchoneteFacadeTest {
     public void setUp() {
         facade = new LanchoneteFacade();
         cliente = facade.cadastrarCliente("10", "Leonardo", "Juiz de Fora", "MG");
-        pedido = new Pedido(cliente);
+        pedido = new Pedido(cliente, TipoEntrega.COMER_NO_LOCAL);
 
         ItemConsumivel lanche = new Sanduiche("X-Burguer", 15.00);
         ItemPedido item = new ItemPedido(lanche, 1);

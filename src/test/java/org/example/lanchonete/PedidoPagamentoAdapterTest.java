@@ -2,6 +2,7 @@ package org.example.lanchonete;
 
 //A ideia é que tenha uma classe que analise o gateway e retorne coisas esperadas
 
+import org.example.lanchonete.entrega.TipoEntrega;
 import org.example.lanchonete.pedido.Pedido;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,7 +16,7 @@ public class PedidoPagamentoAdapterTest {
 
         Cidade jf = CidadeFactory.getCidade("Juiz de Fora", "MG");
         Cliente cliente = new Cliente("1", "Leonardo César", jf);
-        Pedido pedido = new Pedido(cliente);
+        Pedido pedido = new Pedido(cliente, TipoEntrega.COMER_NO_LOCAL);
         pedido.adicionarLinha(new ItemPedidoBuilder(new Sanduiche("X-Burguer", 15.00)).build());
 
         boolean sucesso = pedido.pagar(adaptador, new SemDesconto());
@@ -31,7 +32,7 @@ public class PedidoPagamentoAdapterTest {
 
         Cidade jf = CidadeFactory.getCidade("Juiz de Fora", "MG");
         Cliente cliente = new Cliente("1", "Leonardo César", jf);
-        Pedido pedido = new Pedido(cliente);
+        Pedido pedido = new Pedido(cliente, TipoEntrega.COMER_NO_LOCAL);
         pedido.adicionarLinha(new ItemPedidoBuilder(new Sanduiche("X-Burguer", 15.00)).build());
 
         assertThrows(RuntimeException.class, () -> {
@@ -48,7 +49,7 @@ public class PedidoPagamentoAdapterTest {
         Cliente cliente = new Cliente("1", "Leonardo César", jf);
 
         // Criando um pedido vazio (sem itens), cujo valor bruto resultará em 0.0
-        Pedido pedidoVazio = new Pedido(cliente);
+        Pedido pedidoVazio = new Pedido(cliente, TipoEntrega.COMER_NO_LOCAL);
 
         // Deve estourar RuntimeException disparada pela validação de valor menor ou igual a zero
         assertThrows(RuntimeException.class, () -> {

@@ -1,5 +1,6 @@
 package org.example.lanchonete;
 
+import org.example.lanchonete.entrega.TipoEntrega;
 import org.example.lanchonete.pedido.Pedido;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -11,7 +12,7 @@ public class PedidoStrategyTest {
         // Cenário: valor bruto de R$ 40,00
         Cidade cidadeFake = CidadeFactory.getCidade("Cidade Teste", "TS");
         Cliente cliente = new Cliente("999", "Cliente Teste", cidadeFake);
-        Pedido pedido = new Pedido(cliente);
+        Pedido pedido = new Pedido(cliente, TipoEntrega.COMER_NO_LOCAL);
 
         ItemPedido item = new ItemPedidoBuilder(new Sanduiche("X-Tudo", 20.00)).comQuantidade(2).build();
         pedido.adicionarLinha(item);
@@ -29,7 +30,7 @@ public class PedidoStrategyTest {
         // Cenário: Pedido bruto no valor de R$ 50,00
         Cidade cidadeFake = CidadeFactory.getCidade("Cidade Teste", "TS");
         Cliente cliente = new Cliente("999", "Cliente Teste", cidadeFake);
-        Pedido pedido = new Pedido(cliente);
+        Pedido pedido = new Pedido(cliente, TipoEntrega.COMER_NO_LOCAL);
 
         ItemPedido item = new ItemPedidoBuilder(new Sanduiche("Combo", 50.00)).build();
         pedido.adicionarLinha(item);
@@ -46,7 +47,7 @@ public class PedidoStrategyTest {
     public void deveLancarExcecaoAoTentarPassarEstrategiaNula() {
         Cidade cidadeFake = CidadeFactory.getCidade("Cidade Teste", "TS");
         Cliente cliente = new Cliente("999", "Cliente Teste", cidadeFake);
-        Pedido pedido = new Pedido(cliente);
+        Pedido pedido = new Pedido(cliente, TipoEntrega.COMER_NO_LOCAL);
 
         assertThrows(IllegalArgumentException.class, () -> {
             pedido.getValorTotalFinal(null);

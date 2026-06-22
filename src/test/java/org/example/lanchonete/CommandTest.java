@@ -1,4 +1,5 @@
 package org.example.lanchonete;
+import org.example.lanchonete.entrega.TipoEntrega;
 import org.example.lanchonete.pedido.*;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -11,7 +12,7 @@ public class CommandTest {
         Cidade cidadeCliente = new Cidade("Juiz de Fora", "MG");
         Cliente cliente = new Cliente("1", "Leonardo", cidadeCliente);
 
-        Pedido pedido = new Pedido(cliente);
+        Pedido pedido = new Pedido(cliente, TipoEntrega.COMER_NO_LOCAL);
         CentralComandos central = new CentralComandos();
 
         central.executar(new EstadoCancelado.IniciarPreparoCommand(pedido));
@@ -33,7 +34,7 @@ public class CommandTest {
         Cidade cidadeCliente = new Cidade("Juiz de Fora", "MG");
         Cliente cliente = new Cliente("1", "Leonardo", cidadeCliente);
 
-        Pedido pedido = new Pedido(cliente);
+        Pedido pedido = new Pedido(cliente, TipoEntrega.COMER_NO_LOCAL);
         //System.out.println(pedido.getEstadoAtual());
         CentralComandos central = new CentralComandos();
 

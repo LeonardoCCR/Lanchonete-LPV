@@ -1,5 +1,6 @@
 package org.example.lanchonete;
 
+import org.example.lanchonete.entrega.TipoEntrega;
 import org.example.lanchonete.pedido.Pedido;
 import org.junit.jupiter.api.Test;
 import java.util.Iterator;
@@ -12,7 +13,7 @@ public class PedidoIteratorTest {
         //  Criar um cliente fictício e um pedido com 2 itens distintos
         Cidade cidadeFake = CidadeFactory.getCidade("Cidade Teste", "TS");
         Cliente cliente = new Cliente("999", "Cliente Teste", cidadeFake);
-        Pedido pedido = new Pedido(cliente);
+        Pedido pedido = new Pedido(cliente, TipoEntrega.COMER_NO_LOCAL);
 
         ItemPedido item1 = new ItemPedidoBuilder(new Salgado("Coxinha", 6.00)).comQuantidade(2).build(); // 12.00
         ItemPedido item2 = new ItemPedidoBuilder(new Sanduiche("X-Burguer", 15.00)).build(); // 15.00
@@ -39,7 +40,7 @@ public class PedidoIteratorTest {
     public void deveAvançarPonteirosEIdentificarFimDaListaCorretamente() {
         Cidade cidadeFake = CidadeFactory.getCidade("Cidade Teste", "TS");
         Cliente cliente = new Cliente("999", "Cliente Teste", cidadeFake);
-        Pedido pedido = new Pedido(cliente);
+        Pedido pedido = new Pedido(cliente, TipoEntrega.COMER_NO_LOCAL);
 
         ItemPedido item = new ItemPedidoBuilder(new Salgado("Suco de Laranja", 8.00)).build();
         pedido.adicionarLinha(item);

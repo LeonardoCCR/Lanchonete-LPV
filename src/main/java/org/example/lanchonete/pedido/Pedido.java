@@ -2,6 +2,7 @@ package org.example.lanchonete.pedido;
 
 
 import org.example.lanchonete.*;
+import org.example.lanchonete.entrega.TipoEntrega;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -17,12 +18,14 @@ public class Pedido implements Iterable<ItemPedido> {
 	private final List<ItemPedido> linhas;
 	private EstadoPedido estadoAtual;
 	private final PedidoObservadorHandler notificacaoHandler;
+	private final TipoEntrega tipoEntrega;
 
 
-	public Pedido(Cliente cliente) {
-		if (cliente == null) {
+	public Pedido(Cliente cliente, TipoEntrega tipoEntrega) {
+        if (cliente == null) {
 			throw new IllegalArgumentException("Todo pedido precisa ter um cliente associado.");
 		}
+		this.tipoEntrega = tipoEntrega;
 		this.cliente = cliente;
         this.estadoAtual = new EstadoRecebido();
         this.codigo = ContadorPedido.get().gerarCodigo();
@@ -84,7 +87,14 @@ public class Pedido implements Iterable<ItemPedido> {
 			throw new IllegalArgumentException("A estratégia de desconto não pode ser nula.");
 		}
 		double bruto = getValorBruto();
-		return estrategia.aplicar(bruto);
+
+		return estrategia.aplicar(bruto) + calcularFrete();
+	}
+
+	public void aplicarEmbalagens(){
+		for(ItemPedido item: linhas){
+			item.aplicarEmbalagem(tipoEntrega);
+		}
 	}
 
 	public Cliente getCliente() {
@@ -108,6 +118,13 @@ public class Pedido implements Iterable<ItemPedido> {
 		double valorFinal = this.getValorTotalFinal(estrategia);
 
 		return mecanismoPagamento.processar(valorFinal);
+	}
+
+	private double calcularFrete(){
+		if(tipoEntrega.cobraEntrega){
+			return 5;
+		}
+		return 0;
 	}
 
 	//Iterator

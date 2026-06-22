@@ -14,7 +14,7 @@ public class PedidoIteratorTest {
         Cliente cliente = new Cliente("999", "Cliente Teste", cidadeFake);
         Pedido pedido = new Pedido(cliente);
 
-        ItemPedido item1 = new ItemPedidoBuilder(new Salgado("Coxinha", 6.00)).quantidade(2).build(); // 12.00
+        ItemPedido item1 = new ItemPedidoBuilder(new Salgado("Coxinha", 6.00)).comQuantidade(2).build(); // 12.00
         ItemPedido item2 = new ItemPedidoBuilder(new Sanduiche("X-Burguer", 15.00)).build(); // 15.00
 
         pedido.adicionarLinha(item1);

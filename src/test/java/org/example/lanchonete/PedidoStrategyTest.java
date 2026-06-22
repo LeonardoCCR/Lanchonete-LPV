@@ -13,7 +13,7 @@ public class PedidoStrategyTest {
         Cliente cliente = new Cliente("999", "Cliente Teste", cidadeFake);
         Pedido pedido = new Pedido(cliente);
 
-        ItemPedido item = new ItemPedidoBuilder(new Sanduiche("X-Tudo", 20.00)).quantidade(2).build();
+        ItemPedido item = new ItemPedidoBuilder(new Sanduiche("X-Tudo", 20.00)).comQuantidade(2).build();
         pedido.adicionarLinha(item);
 
 

@@ -6,7 +6,6 @@ public class ItemPedidoBuilder {
     private ItemConsumivel itemAtual;
     private int quantidade = 1;
 
-    // Construtor obriga a passagem de item consumível como base
     public ItemPedidoBuilder(ItemConsumivel itemBase) {
         if (itemBase == null) {
             throw new IllegalArgumentException("O item base não pode ser nulo.");
@@ -35,12 +34,11 @@ public class ItemPedidoBuilder {
         
     }
 
-    public ItemPedidoBuilder quantidade(int quantidade) {
+    public ItemPedidoBuilder comQuantidade(int quantidade) {
         this.quantidade = quantidade;
         return this;
     }
 
-    //Fabrica e tretorna o ItemPedido
     public ItemPedido build() {
         return new ItemPedido(this.itemAtual, this.quantidade);
     }

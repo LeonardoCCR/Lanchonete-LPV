@@ -1,0 +1,41 @@
+package org.example.lanchonete;
+import org.example.lanchonete.pedido.*;
+
+public class LanchoneteFacade {
+
+    private final PessoaRepository<Cliente> clienteRepository;
+    private final CentralComandos centralComandos;
+    private final ProcessadorPagamento processadorConfigurado;
+
+    public LanchoneteFacade() {
+        this.clienteRepository = new PessoaRepository<>();
+        this.centralComandos = new CentralComandos();
+
+        GatewayPagamentoExterno gateway = new GatewayPagamentoExterno();
+        ProcessadorPagamento adaptador = new PagamentoAdapter(gateway, "TOKEN_VALIDO");
+        this.processadorConfigurado = new ProcessadorPagamentoProxy(adaptador);
+    }
+
+    public ProcessadorPagamento getProcessadorConfigurado() {
+        return this.processadorConfigurado;
+    }
+
+    public Cliente cadastrarCliente(String id, String nome, String nomeCidade, String uf) {
+        Cidade cidade = CidadeFactory.getCidade(nomeCidade, uf);
+        Cliente cliente = new Cliente(id, nome, cidade);
+        clienteRepository.cadastrar(cliente);
+        return cliente;
+    }
+
+    public void processarFluxoPedido(Pedido pedido, Pagamento formaPagamento, EstrategiaDesconto desconto) {
+        formaPagamento.efetuarPagamento(pedido, desconto);
+        if (formaPagamento.isConfirmado()) {
+            // --> Transação Confirmada!
+            centralComandos.executar(new IniciarPreparoCommand(pedido));
+            centralComandos.executar(new FinalizarPreparoCommand(pedido));
+        } else {
+            // --> Transação Falhou!
+            centralComandos.executar(new CancelarPedidoCommand(pedido));
+        }
+    }
+}

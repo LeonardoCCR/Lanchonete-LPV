@@ -37,7 +37,7 @@ public class PedidoIteratorTest {
     }
 
     @Test
-    public void deveAvançarPonteirosEIdentificarFimDaListaCorretamente() {
+    public void deveAvancarPonteirosEIdentificarFimDaListaCorretamente() {
         Cidade cidadeFake = CidadeFactory.getCidade("Cidade Teste", "TS");
         Cliente cliente = new Cliente("999", "Cliente Teste", cidadeFake);
         Pedido pedido = new Pedido(cliente, TipoEntrega.COMER_NO_LOCAL);

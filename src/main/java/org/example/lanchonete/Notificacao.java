@@ -5,6 +5,4 @@ public record Notificacao (
         String canal
 ) {
 
-
-
 }

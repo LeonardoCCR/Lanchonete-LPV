@@ -30,11 +30,9 @@ public class LanchoneteFacade {
     public void processarFluxoPedido(Pedido pedido, Pagamento formaPagamento, EstrategiaDesconto desconto) {
         formaPagamento.efetuarPagamento(pedido, desconto);
         if (formaPagamento.isConfirmado()) {
-            // --> Transação Confirmada!
             centralComandos.executar(new IniciarPreparoCommand(pedido));
             centralComandos.executar(new FinalizarPreparoCommand(pedido));
         } else {
-            // --> Transação Falhou!
             centralComandos.executar(new CancelarPedidoCommand(pedido));
         }
     }

@@ -9,7 +9,6 @@ public class EstadoPronto extends EstadoPedido {
 	public void cancelar(Pedido contexto) {
 		contexto.setEstado(new EstadoCancelado());
 		notificar(contexto, "Pedido cancelado, multa aplicada", "PEDIDO_CANCELADO");
-		//TODO: implementar multa
 	}
 
 	@Override

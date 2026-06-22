@@ -1,6 +1,6 @@
 package org.example.lanchonete;
 
-//builder
+//Builder
 
 public class ItemPedidoBuilder {
     private ItemConsumivel itemAtual;

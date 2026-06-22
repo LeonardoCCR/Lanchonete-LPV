@@ -13,7 +13,6 @@ public class PagamentoPix extends Pagamento {
 	public void efetuarPagamento(Pedido pedido, EstrategiaDesconto estrategia) {
 		this.valor = pedido.getValorTotalFinal(estrategia);
 
-		// Executa através da ponte
 		this.confirmado = this.processador.processar(this.valor);
 	}
 }

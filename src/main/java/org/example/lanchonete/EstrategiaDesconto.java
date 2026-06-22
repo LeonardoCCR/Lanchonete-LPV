@@ -1,6 +1,6 @@
 package org.example.lanchonete;
 
-//strategy
+//Strategy
 public interface EstrategiaDesconto {
     double aplicar(double valorBruto);
 }

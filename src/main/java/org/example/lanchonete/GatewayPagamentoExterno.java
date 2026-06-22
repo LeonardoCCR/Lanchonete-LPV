@@ -4,7 +4,7 @@ public class GatewayPagamentoExterno{
 
     public String executarCobrancaEletronica(double quantiaDinheiro, String tokenSeguranca) {
 
-        if (tokenSeguranca == null || !"TOKEN_VALIDO".equals(tokenSeguranca)) {
+        if (!"TOKEN_VALIDO".equals(tokenSeguranca)) {
             return "ERROR_AUTHENTICATION_FAILED";
         }
 

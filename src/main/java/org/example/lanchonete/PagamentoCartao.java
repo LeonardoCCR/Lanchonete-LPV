@@ -11,7 +11,6 @@
 		@Override
 		public void efetuarPagamento(Pedido pedido, EstrategiaDesconto estrategia) {
 			this.valor = pedido.getValorTotalFinal(estrategia);
-			// Paga usando a ponte
 			this.confirmado = this.processador.processar(this.valor);
 		}
 	}

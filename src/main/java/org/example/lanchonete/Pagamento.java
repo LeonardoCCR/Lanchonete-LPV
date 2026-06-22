@@ -4,11 +4,11 @@ import org.example.lanchonete.pedido.Pedido;
 
 public abstract class Pagamento {
 
-	protected ProcessadorPagamento processador; //ponte
+	protected ProcessadorPagamento processador; // Bridge
 	protected double valor;
 	protected boolean confirmado;
 
-	// Construtor com a ponte
+
 	protected Pagamento(ProcessadorPagamento processador) {
 		this.processador = processador;
 		this.confirmado = false;

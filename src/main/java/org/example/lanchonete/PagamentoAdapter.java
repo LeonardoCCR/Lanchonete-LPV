@@ -1,7 +1,5 @@
 package org.example.lanchonete;
 
-import org.example.lanchonete.GatewayPagamentoExterno;
-
 public class PagamentoAdapter implements ProcessadorPagamento {
 
     private final GatewayPagamentoExterno gatewayExterno;
@@ -16,7 +14,6 @@ public class PagamentoAdapter implements ProcessadorPagamento {
     public boolean processar(double valor) {
         String resultado = gatewayExterno.executarCobrancaEletronica(valor, this.tokenConfigurado);
 
-        // Avalia o retorno externo e converte em exceções do sistema local
         if ("ERROR_AUTHENTICATION_FAILED".equals(resultado)) {
             throw new RuntimeException("Falha na comunicação com o gateway: Token de segurança inválido.");
         }

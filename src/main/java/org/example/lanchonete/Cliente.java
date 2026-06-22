@@ -19,7 +19,7 @@ public class Cliente extends Pessoa implements PedidoObservador {
 
 
     public void receberNotificacao(Notificacao notificacao) {
-		// TODO implement here
+
 	}
 
 	public PreferenciasNotificacao getPreferencias() {

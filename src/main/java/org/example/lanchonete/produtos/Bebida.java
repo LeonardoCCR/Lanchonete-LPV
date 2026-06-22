@@ -1,6 +1,8 @@
 package org.example.lanchonete.produtos;
 
 
+import org.example.lanchonete.relatorio.RelatorioVisitor;
+
 public class Bebida implements ItemConsumivel {
 
 	private String descricao;
@@ -24,5 +26,10 @@ public class Bebida implements ItemConsumivel {
 	@Override
 	public boolean isLiquido() {
 		return true;
+	}
+
+	@Override
+	public void accept(RelatorioVisitor visitor) {
+		visitor.visit(this);
 	}
 }

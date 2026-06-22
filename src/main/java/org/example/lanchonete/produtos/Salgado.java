@@ -1,5 +1,7 @@
 package org.example.lanchonete.produtos;
 
+import org.example.lanchonete.relatorio.RelatorioVisitor;
+
 public class Salgado implements ItemConsumivel {
 
     private String descricao;
@@ -18,5 +20,10 @@ public class Salgado implements ItemConsumivel {
     @Override
     public double getPreco() {
         return preco;
+    }
+
+    @Override
+    public void accept(RelatorioVisitor visitor) {
+        visitor.visit(this);
     }
 }

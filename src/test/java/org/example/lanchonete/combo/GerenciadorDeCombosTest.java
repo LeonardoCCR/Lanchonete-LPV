@@ -3,6 +3,7 @@ package org.example.lanchonete.combo;
 import org.example.lanchonete.produtos.ItemConsumivel;
 import org.example.lanchonete.produtos.ItemPedido;
 import org.example.lanchonete.produtos.ItemPedidoBuilder;
+import org.example.lanchonete.relatorio.RelatorioVisitor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -23,10 +24,19 @@ class GerenciadorDeCombosTest {
         }
 
         @Override
+        public boolean isLiquido() {
+            return ItemConsumivel.super.isLiquido();
+        }
+
+        @Override
         public String getDescricao() {
             return "Mock";
         }
 
+        @Override
+        public void accept(RelatorioVisitor visitor) {
+
+        }
     }
 
     @BeforeEach

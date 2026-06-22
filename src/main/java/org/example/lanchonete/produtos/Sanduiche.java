@@ -1,5 +1,7 @@
 package org.example.lanchonete.produtos;
 
+import org.example.lanchonete.relatorio.RelatorioVisitor;
+
 public class Sanduiche implements ItemPersonalizavel {
 
 	private String descricao;
@@ -20,5 +22,9 @@ public class Sanduiche implements ItemPersonalizavel {
 		return preco;
 	}
 
+	@Override
+	public void accept(RelatorioVisitor visitor) {
+		visitor.visit(this);
+	}
 
 }

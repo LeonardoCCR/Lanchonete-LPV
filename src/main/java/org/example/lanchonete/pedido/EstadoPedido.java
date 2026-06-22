@@ -1,11 +1,14 @@
-package org.example.lanchonete;
+package org.example.lanchonete.pedido;
 
+
+import org.example.lanchonete.Notificacao;
 
 public abstract class EstadoPedido {
 
 
-	protected void notificar(Pedido contexto, String notificacao) {
-		contexto.notificar("Notificação sobre o pedido "+contexto.toString()+": "+notificacao);
+	protected void notificar(Pedido contexto, String mensagem, String canal) {
+		Notificacao notificacao = new Notificacao("Notificação sobre o pedido "+contexto.toString()+": "+mensagem, canal);
+		contexto.notificar(notificacao);
 	}
 
 	public abstract void cancelar(Pedido contexto);
@@ -24,4 +27,6 @@ public abstract class EstadoPedido {
 	protected void acaoInvalida(String message){
 		throw new IllegalStateException("A ação é inválida: "+message);
 	}
+
+	public abstract EstadoPedido clonar();
 }

@@ -15,17 +15,24 @@ public class ItemPedidoBuilder {
     }
 
     public ItemPedidoBuilder comQueijoExtra() {
-        if (this.itemAtual instanceof ItemPersonalizavel) {
-            this.itemAtual = new QueijoExtra((ItemPersonalizavel) this.itemAtual);
+
+        try{
+            ItemPersonalizavel itemCastado = (ItemPersonalizavel) itemAtual;
+            this.itemAtual = new QueijoExtra(itemCastado);
         }
+        catch(ClassCastException ignored){ }
         return this;
+
     }
 
     public ItemPedidoBuilder comBaconExtra() {
-        if (this.itemAtual instanceof ItemPersonalizavel) {
-            this.itemAtual = new BaconExtra((ItemPersonalizavel) this.itemAtual);
+        try{
+            ItemPersonalizavel itemCastado = (ItemPersonalizavel) itemAtual;
+            this.itemAtual = new BaconExtra(itemCastado);
         }
+        catch(ClassCastException ignored){ }
         return this;
+        
     }
 
     public ItemPedidoBuilder quantidade(int quantidade) {

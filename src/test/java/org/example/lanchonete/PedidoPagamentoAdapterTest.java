@@ -2,7 +2,7 @@ package org.example.lanchonete;
 
 //A ideia é que tenha uma classe que analise o gateway e retorne coisas esperadas
 
-import org.example.lanchonete.GatewayPagamentoExterno;
+import org.example.lanchonete.pedido.Pedido;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

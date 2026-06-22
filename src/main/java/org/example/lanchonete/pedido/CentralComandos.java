@@ -1,7 +1,5 @@
 package org.example.lanchonete.pedido;
 
-import org.example.lanchonete.Command;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

@@ -1,7 +1,5 @@
 package org.example.lanchonete.produtos;
 
-import org.example.lanchonete.ItemConsumivel;
-
 public class Acompanhamento implements ItemConsumivel {
 
     private String descricao;

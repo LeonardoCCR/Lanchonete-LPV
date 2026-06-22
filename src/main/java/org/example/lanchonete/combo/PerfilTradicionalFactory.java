@@ -1,8 +1,8 @@
 package org.example.lanchonete.combo;
 
-import org.example.lanchonete.Bebida;
-import org.example.lanchonete.ItemConsumivel;
-import org.example.lanchonete.Sanduiche;
+import org.example.lanchonete.produtos.Bebida;
+import org.example.lanchonete.produtos.ItemConsumivel;
+import org.example.lanchonete.produtos.Sanduiche;
 import org.example.lanchonete.produtos.Acompanhamento;
 
 public class PerfilTradicionalFactory implements PerfilComboFactory {

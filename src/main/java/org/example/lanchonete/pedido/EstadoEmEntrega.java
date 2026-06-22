@@ -1,8 +1,6 @@
 package org.example.lanchonete.pedido;
 
 
-import org.example.lanchonete.Command;
-
 public class EstadoEmEntrega extends EstadoPedido {
 
 	@Override

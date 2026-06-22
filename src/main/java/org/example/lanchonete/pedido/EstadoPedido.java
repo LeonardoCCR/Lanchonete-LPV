@@ -1,7 +1,7 @@
 package org.example.lanchonete.pedido;
 
 
-import org.example.lanchonete.Notificacao;
+import org.example.lanchonete.notificacao.Notificacao;
 
 public abstract class EstadoPedido {
 

@@ -1,7 +1,7 @@
 package org.example.lanchonete.combo;
 
-import org.example.lanchonete.ItemPedido;
-import org.example.lanchonete.ItemPedidoBuilder;
+import org.example.lanchonete.produtos.ItemPedido;
+import org.example.lanchonete.produtos.ItemPedidoBuilder;
 
 import java.util.HashMap;
 import java.util.Map;

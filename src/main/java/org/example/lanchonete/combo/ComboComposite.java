@@ -1,5 +1,5 @@
 package org.example.lanchonete.combo;
-import org.example.lanchonete.ItemConsumivel;
+import org.example.lanchonete.produtos.ItemConsumivel;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;

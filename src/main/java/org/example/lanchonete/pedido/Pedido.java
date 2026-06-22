@@ -1,8 +1,14 @@
 package org.example.lanchonete.pedido;
 
 
-import org.example.lanchonete.*;
 import org.example.lanchonete.entrega.TipoEntrega;
+import org.example.lanchonete.notificacao.Notificacao;
+import org.example.lanchonete.notificacao.PedidoObservador;
+import org.example.lanchonete.notificacao.PedidoObservadorHandler;
+import org.example.lanchonete.pagamento.EstrategiaDesconto;
+import org.example.lanchonete.pagamento.ProcessadorPagamento;
+import org.example.lanchonete.produtos.ItemPedido;
+import org.example.lanchonete.usuario.Cliente;
 
 import java.util.ArrayList;
 import java.util.Iterator;

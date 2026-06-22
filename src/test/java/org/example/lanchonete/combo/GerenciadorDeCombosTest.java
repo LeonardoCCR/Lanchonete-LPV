@@ -1,8 +1,8 @@
 package org.example.lanchonete.combo;
 
-import org.example.lanchonete.ItemConsumivel;
-import org.example.lanchonete.ItemPedido;
-import org.example.lanchonete.ItemPedidoBuilder;
+import org.example.lanchonete.produtos.ItemConsumivel;
+import org.example.lanchonete.produtos.ItemPedido;
+import org.example.lanchonete.produtos.ItemPedidoBuilder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

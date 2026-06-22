@@ -1,7 +1,5 @@
 package org.example.lanchonete.pedido;
 
-import org.example.lanchonete.Command;
-
 public class EnviarEntregaCommand implements Command {
 
     private final Pedido pedido;

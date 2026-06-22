@@ -1,6 +1,6 @@
 package org.example.lanchonete.combo;
 
-import org.example.lanchonete.ItemConsumivel;
+import org.example.lanchonete.produtos.ItemConsumivel;
 
 public interface PerfilComboFactory {
     ItemConsumivel criarSanduichePrincipal();

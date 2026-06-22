@@ -1,9 +1,9 @@
 package org.example.lanchonete.entrega;
 
-import org.example.lanchonete.Bebida;
-import org.example.lanchonete.ItemConsumivel;
-import org.example.lanchonete.Salgado;
-import org.example.lanchonete.Sanduiche;
+import org.example.lanchonete.produtos.Bebida;
+import org.example.lanchonete.produtos.ItemConsumivel;
+import org.example.lanchonete.produtos.Salgado;
+import org.example.lanchonete.produtos.Sanduiche;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

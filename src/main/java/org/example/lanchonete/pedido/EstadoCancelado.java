@@ -1,7 +1,5 @@
 package org.example.lanchonete.pedido;
 
-import org.example.lanchonete.Command;
-
 public class EstadoCancelado extends EstadoPedido {
 
 	@Override

@@ -1,6 +1,6 @@
 package org.example.lanchonete.combo;
 
-import org.example.lanchonete.ItemPedido;
+import org.example.lanchonete.produtos.ItemPedido;
 
 import java.util.List;
 

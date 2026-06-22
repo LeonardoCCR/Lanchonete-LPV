@@ -1,6 +1,6 @@
 package org.example.lanchonete.combo;
 
-import org.example.lanchonete.ItemConsumivel;
+import org.example.lanchonete.produtos.ItemConsumivel;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

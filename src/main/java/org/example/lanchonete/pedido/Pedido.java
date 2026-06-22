@@ -32,6 +32,7 @@ public class Pedido implements Iterable<ItemPedido> {
 		this.linhas = new ArrayList<>();
 		this.notificacaoHandler = new PedidoObservadorHandler();
 		notificacaoHandler.aplicarPreferencias(cliente);
+		aplicarEmbalagens();
 
 	}
 
@@ -40,6 +41,7 @@ public class Pedido implements Iterable<ItemPedido> {
 		if (itemPedido == null) {
 			throw new IllegalArgumentException("O item do pedido não pode ser nulo.");
 		}
+		itemPedido.aplicarEmbalagem(tipoEntrega);
 		this.linhas.add(itemPedido);
 	}
 

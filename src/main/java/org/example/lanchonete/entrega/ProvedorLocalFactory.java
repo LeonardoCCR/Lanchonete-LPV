@@ -1,15 +1,14 @@
 package org.example.lanchonete.entrega;
 
 import org.example.lanchonete.ItemConsumivel;
-
-public class ProvedorDeliveryFactory implements ProvedorEmbalagem {
+public class ProvedorLocalFactory implements ProvedorEmbalagem {
 
     @Override
     public Embalagem gerarEmbalagem(ItemConsumivel item) {
         if (item.isLiquido()) {
-            return new Embalagem("Copo Descartável Lacrado", 0.5);
+            return new Embalagem("Copo Descartável", 0.3);
         } else {
-            return new Embalagem("Caixa de Isopor", 0.5);
+            return new Embalagem("Bandeja", 0.0);
         }
     }
 }

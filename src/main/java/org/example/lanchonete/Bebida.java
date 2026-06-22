@@ -1,5 +1,6 @@
 package org.example.lanchonete;
 
+
 public class Bebida implements ItemConsumivel {
 
 	private String descricao;
@@ -18,5 +19,10 @@ public class Bebida implements ItemConsumivel {
 	@Override
 	public double getPreco() {
 		return preco;
+	}
+
+	@Override
+	public boolean isLiquido() {
+		return true;
 	}
 }

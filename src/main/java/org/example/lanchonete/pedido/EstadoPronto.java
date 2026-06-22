@@ -25,7 +25,6 @@ public class EstadoPronto extends EstadoPedido {
 	@Override
 	public void enviarEntrega(Pedido contexto) {
 		contexto.setEstado(new EstadoEmEntrega());
-		contexto.aplicarEmbalagens();
 		notificar(contexto, "Pedido em entrega", "PEDIDO_SAIU_ENTREGA");
 	}
 

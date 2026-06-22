@@ -7,15 +7,14 @@ public class ItemPedido {
 
 	private final ItemConsumivel item;
 	private final int quantidade;
-	private final Embalagem embalagem;
+	private Embalagem embalagem;
 
-	ItemPedido(ItemConsumivel item, int quantidade, TipoEntrega tipoEntrega) {
+	ItemPedido(ItemConsumivel item, int quantidade) {
 		if (quantidade <= 0) {
 			throw new IllegalArgumentException("A quantidade deve ser maior que zero.");
 		}
 		this.item = item;
 		this.quantidade = quantidade;
-		this.embalagem = tipoEntrega.provedor.gerarEmbalagem(item);
 	}
 
 	public double getSubtotal() {
@@ -34,6 +33,12 @@ public class ItemPedido {
 	public String toString() {
 		return String.format("%s (x%d) - Subtotal: R$ %.2f",
 				item.getDescricao(), quantidade, getSubtotal());
+	}
+
+	public void aplicarEmbalagem(TipoEntrega tipoEntrega){
+		if (embalagem == null){
+			embalagem = tipoEntrega.provedor.gerarEmbalagem(item);
+		}
 	}
 
 }

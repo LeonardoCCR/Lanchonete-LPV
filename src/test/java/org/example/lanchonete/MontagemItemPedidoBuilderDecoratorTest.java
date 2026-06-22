@@ -1,5 +1,6 @@
 package org.example.lanchonete;
 
+import org.example.lanchonete.entrega.TipoEntrega;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -17,6 +18,8 @@ public class MontagemItemPedidoBuilderDecoratorTest {
                 .comQuantidade(2)
                 .build();
 
+        // Simula o comportamento do Pedido associando a embalagem
+        itemPedido.aplicarEmbalagem(TipoEntrega.COMER_NO_LOCAL);
 
         double precoBacon = new BaconExtra(new Sanduiche("", 0)).getPreco();
         double precoUnitarioEsperado = 15.00 + 3.00 + precoBacon;
@@ -37,6 +40,9 @@ public class MontagemItemPedidoBuilderDecoratorTest {
                 .comBaconExtra()
                 .comQuantidade(1)
                 .build();
+
+        // Simula o comportamento do Pedido associando a embalagem
+        itemPedido.aplicarEmbalagem(TipoEntrega.COMER_NO_LOCAL);
 
         assertEquals(6.00, itemPedido.getSubtotal(), 0.001);
         assertEquals("Coxinha", itemPedido.getItem().getDescricao());

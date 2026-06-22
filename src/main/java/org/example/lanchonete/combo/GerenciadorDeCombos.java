@@ -12,7 +12,7 @@ public class GerenciadorDeCombos {
 
     private Map<String, EstruturaCombo> receitas = new HashMap<>();
 
-    private Map<String, EstruturaCombo> registrarReceitasPadrao() {
+    public Map<String, EstruturaCombo> registrarReceitasPadrao() {
 
         Map<String, EstruturaCombo> receitasPadrao = new HashMap<>();
 

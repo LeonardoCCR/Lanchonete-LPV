@@ -8,13 +8,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 //Decorator e Builder
 public class MontagemItemPedidoBuilderDecoratorTest {
     @Test
-    public void deveMontarSanduicheComDecoratorsEQuantidadeViaBuilder() {
+    public void deveMontarSanduicheComDecoratorsEComQuantidadeViaBuilder() {
         ItemConsumivel sanduicheBase = new Sanduiche("X-Burguer", 15.00);
 
         ItemPedido itemPedido = new ItemPedidoBuilder(sanduicheBase)
                 .comQueijoExtra()
                 .comBaconExtra()
-                .quantidade(2)
+                .comQuantidade(2)
                 .build();
 
 
@@ -35,7 +35,7 @@ public class MontagemItemPedidoBuilderDecoratorTest {
         ItemPedido itemPedido = new ItemPedidoBuilder(coxinha)
                 .comQueijoExtra()
                 .comBaconExtra()
-                .quantidade(1)
+                .comQuantidade(1)
                 .build();
 
         assertEquals(6.00, itemPedido.getSubtotal(), 0.001);

@@ -21221,6 +21221,20 @@
 							"propertyLabel": {
 								"$ref": "AAAAAAGe6Jfmo57OBX0="
 							}
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAGe8j0vBhyk6sY=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;32;0",
+							"parentStyle": false,
+							"left": 784,
+							"top": 536,
+							"width": 384,
+							"height": 236,
+							"text": "IMPORTANTE: este diagrama está desatualizado. preferimos utilizar o diagrama gerado pelo intellij, com base nas classes implementadas. "
 						}
 					]
 				},

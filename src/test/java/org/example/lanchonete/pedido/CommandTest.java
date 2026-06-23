@@ -36,13 +36,12 @@ public class CommandTest {
         Cliente cliente = new Cliente("1", "Leonardo", cidadeCliente);
 
         Pedido pedido = new Pedido(cliente, TipoEntrega.COMER_NO_LOCAL);
-        //System.out.println(pedido.getEstadoAtual());
         CentralComandos central = new CentralComandos();
 
         central.executar(new EstadoCancelado.IniciarPreparoCommand(pedido));
-        //System.out.println(pedido.getEstadoAtual());
+
         central.executar(new EstadoCancelado.FinalizarPreparoCommand(pedido));
-        //System.out.println(pedido.getEstadoAtual());
+
         assertEquals(2, central.getHistorico().size());
     }
 }

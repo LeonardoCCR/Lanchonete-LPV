@@ -140,7 +140,15 @@ public class Pedido implements Iterable<ItemPedido> {
 		return linhas.iterator();
 	}
 
-	public Object getEstadoAtual() {
-		return this.estadoAtual.clonar();
+	public EstadoPedido getEstadoAtual() {
+		return (EstadoPedido) this.estadoAtual;
+	}
+
+	public PedidoMemento salvar() {
+		return new PedidoMemento((EstadoPedido) this.estadoAtual.clonar());
+	}
+
+	public void restaurar(PedidoMemento memento) {
+		this.estadoAtual = memento.getEstado();
 	}
 }
